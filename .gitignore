@@ -1,0 +1,60 @@
+Oto kompleksowy i gotowy do użycia plik .gitignore dostosowany do Twojego stosu technologicznego (Node.js + Docker + MongoDB).
+
+Uwzględnia on specyfikę środowiska uruchomieniowego, pliki systemowe, ukrywanie wrażliwych danych konfiguracyjnych oraz wykluczenie katalogu z danymi lokalnej bazy.
+
+Plik .gitignore
+Plaintext
+# ==============================
+# Zależności Node.js
+# ==============================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==============================
+# Zmienne środowiskowe i sekrety
+# NIGDY nie dodawaj tych plików do repozytorium!
+# ==============================
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+*.pem
+
+# ==============================
+# Dane lokalnej bazy MongoDB (Wolumeny Dockera)
+# ==============================
+# Dopasuj nazwę folderu do tej zdefiniowanej w docker-compose.yml
+data/
+db/
+db-data/
+mongo-data/
+
+# ==============================
+# Pliki zbudowanej aplikacji i logi (Build & Logs)
+# ==============================
+dist/
+build/
+out/
+logs/
+*.log
+
+# ==============================
+# Raporty z testów
+# ==============================
+coverage/
+.nyc_output/
+
+# ==============================
+# Pliki systemowe i konfiguracyjne edytorów (IDE)
+# ==============================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
